@@ -1,8 +1,8 @@
 # Wisconsin-Car-Crash-Dashboard
-![alt text](/Users/esther/Documents/GitHub/PowerBI-Wisconsin-Car-Crash-Dashboard/images/Dashboard-1.jpg)
+![alt text](images/Dashboard-1.jpg)
 ## Demo 
 - [Video](https://www.youtube.com/watch?v=MDELlRKnYrM&ab_channel=YanbingChen)
-- [PowerBI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZjJiZTBiZjYtZmM1MC00YzQyLWE5YTctN2FjZWVmOGZhM2M3IiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9&pageName=ReportSection122b823e02231482f562)
+- [PowerBI Dashboard - online version](https://app.powerbi.com/view?r=eyJrIjoiZjJiZTBiZjYtZmM1MC00YzQyLWE5YTctN2FjZWVmOGZhM2M3IiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9&pageName=ReportSection122b823e02231482f562)
 - The map displayed in the PowerBI Dashboard contains over 30,000 dots, exceeding the limit for publishing reports, which is fewer than 30,000 dots. As a result, the map feature may not be visible in the published version of the report. However, all other features of the dashboard are functioning properly and are available for use.
 
 ## Introduction
@@ -36,7 +36,7 @@
 - Open Dashboard report file (Wisconsin Car Crash Dashboard.pbix) in Power BI Desktop
 
 ## DAX Formulas Used in Measures
-
+to be added
 
 
 
