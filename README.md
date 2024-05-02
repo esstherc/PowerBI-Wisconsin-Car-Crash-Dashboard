@@ -36,12 +36,36 @@
 - Open Dashboard report file (Wisconsin Car Crash Dashboard.pbix) in Power BI Desktop
 
 ## DAX Formulas Used in Measures
-to be added
-
-
+```
+Time Classification = 
+    VAR CurrentHour= 'Traffic Accidents in Wisconsin'[Hour]
+RETURN
+    SWITCH(
+        TRUE(),
+        CurrentHour >= 6 && CurrentHour < 10, "Morning Commute",
+        CurrentHour >= 10 && CurrentHour < 16, "Daytime",
+        CurrentHour >= 16 && CurrentHour < 19, "Evening Commute",
+        CurrentHour >= 19 && CurrentHour < 23, "Evening",
+        "Late Night to Early Morning"
+    )
+```
+```
+Weather Category = SWITCH(
+    TRUE(),
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"Overcast", "Scattered Clouds", "Mostly Cloudy", "Partly Cloudy", "Fair", "Clear", "Mostly Cloudy / Windy", "Partly Cloudy / Windy", "Fair / Windy"}, "Clear or Partly Cloudy",
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"Cloudy", "Cloudy / Windy", "Haze", "Mist", "Haze / Windy"}, "Cloudy",
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"Light Rain", "Heavy Rain", "Rain", "Light Rain with Thunder", "Showers in the Vicinity", "Drizzle", "Light Drizzle", "Heavy Drizzle", "Rain / Windy", "Drizzle and Fog", "Drizzle / Windy", "Heavy Rain / Windy", "Light Rain / Windy", "Light Drizzle / Windy", "Light Rain Showers", "Light Rain Shower", "Thunder in the Vicinity"}, "Rain",
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"Light Snow", "Snow", "Wintry Mix", "Heavy Snow", "Snow and Sleet", "Light Snow / Windy", "Snow / Windy", "Heavy Snow / Windy", "Light Snow with Thunder", "Blowing Snow", "Wintry Mix / Windy", "Blowing Snow / Windy", "Light Snow Shower", "Light Snow and Sleet", "Heavy Snow with Thunder"}, "Snow or Wintry Conditions",
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"T-Storm", "Thunder", "Heavy T-Storm", "T-Storm / Windy", "Thunderstorm", "Heavy T-Storm / Windy", "Light Thunderstorms and Rain", "Heavy Thunderstorms and Rain", "Thunderstorms and Rain"}, "Thunderstorms",
+    'Traffic Accident in Wisconsin'[Weather_Condition] IN {"Light Freezing Rain", "Light Sleet", "Light Freezing Drizzle", "Light Ice Pellets", "Light Snow Grains", "Freezing Rain", "Light Freezing Rain / Windy", "Sleet / Windy", "Heavy Sleet / Windy", "Freezing Rain / Windy", "Heavy Sleet", "Light Freezing Fog"}, "Icy or Freezing Conditions",
+    'Traffic Accident in Wisconsin'[Weather_Condition] = "N/A Precipitation", "No Precipitation or Data Unavailable",
+    "Unknown" // Default case if none of the above conditions are met
+)
+```
 
 If you'd like to request a new function, feel free to open an new issue. Please include sample queries and their corresponding results.
 
 ## Authors
-[Yanbing Chen](https://github.com/esstherc/)
-[Qianheng Zhang](https://github.com/QianhengZhang)
+[Yanbing Chen](https://github.com/esstherc/)  
+[Qianheng Zhang](https://github.com/QianhengZhang)  
+April,2024
